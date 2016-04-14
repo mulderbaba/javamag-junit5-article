@@ -12,11 +12,8 @@ class Exceptions2Test {
 
     @Test
     void expectingArithmeticException() {
-        ArithmeticException exception = expectThrows(ArithmeticException.class, () -> divideByZero());
-        assertEquals(exception.getMessage(), "/ by zero");
-    }
-
-    int divideByZero() {
-        return 3/0;
+        StringIndexOutOfBoundsException exception = expectThrows(StringIndexOutOfBoundsException.class,
+                () -> "JUnit5 Rocks!".substring(-1));
+        assertEquals(exception.getMessage(), "String index out of range: -1");
     }
 }

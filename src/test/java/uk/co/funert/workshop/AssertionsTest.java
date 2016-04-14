@@ -11,6 +11,11 @@ class AssertionsTest {
 
     @Test
     void assertionShouldBeTrue() {
+        assertEquals(3 == 2, true);
+    }
+
+    @Test
+    void assertionShouldBeTrueWithLambda() {
         assertEquals(3 == 2, true, () -> "3 not equals to 2!");
     }
 }
